@@ -7,6 +7,285 @@ myApp.controller('HomeController', function() {
 
 
 
+
+
+  // Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+  //
+  // Example
+  //
+  // For sequence = [1, 3, 2, 1], the output should be
+  // almostIncreasingSequence(sequence) = false;
+  //
+  // There is no one element in this array that can be removed in order to get a strictly increasing sequence.
+  //
+  // For sequence = [1, 3, 2], the output should be
+  // almostIncreasingSequence(sequence) = true.
+  //
+  // You can remove 3 from the array to get the strictly increasing sequence [1, 2]. Alternately, you can remove 2 to get the strictly increasing sequence [1, 3].
+  //
+  // Input/Output
+  //
+  // [time limit] 4000ms (js)
+  // [input] array.integer sequence
+  //
+  // Guaranteed constraints:
+  // 2 ≤ sequence.length ≤ 105,
+  // -105 ≤ sequence[i] ≤ 105.
+  //
+  // [output] boolean
+  //
+  // Return true if it is possible to remove one element from the array in order to get a strictly increasing sequence, otherwise return false.
+
+  function almostIncreasingSequence(sequence) {
+    if(sequence.length == 2) return true;
+
+    var error = 0;
+
+    for(var i = 0; i < sequence.length - 1; i++){
+      // if current value is greater than next value
+      if(sequence[i] >= sequence[i+1]){
+        // Test whether stepping back or forwards can bridge the hump or pothole
+        var noStepBack = sequence[i-1] && sequence[i-1] >= sequence[i+1];
+        var noStepFoward = sequence[i+2] && sequence[i] >= sequence[i+2];
+        // We only test for bridge gaps when i > 0
+        if(i > 0 && noStepBack && noStepFoward) {
+          // Cannot step back over gap forwards or backwards
+          // Counts as two errors ONLY WHEN BOTH PRESENT
+          error+=2;
+        }else{
+          // Typical error
+          error++;
+        }
+      }
+
+      // Early dropout cause if you ever get more than one error, then its game over anyway
+      if(error > 1) return false;
+    }
+
+    return true;
+    console.log("array11111",almostIncreasingSequence([[1,9,2,9,8]]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //===============================================================================================================================================================================================================================
+
+    // After becoming famous, CodeBots decided to move to a new building and live together. The building is represented by a rectangular matrix of rooms, each cell containing an integer - the price of the room. Some rooms are free (their cost is 0), but that's probably because they are haunted, so all the bots are afraid of them. That is why any room that is free or is located anywhere below a free room in the same column is not considered suitable for the bots.
+    //
+    // Help the bots calculate the total price of all the rooms that are suitable for them.
+    //
+    // Example
+    //
+    // For
+    //
+    // matrix = [[0, 1, 1, 2],
+    //           [0, 5, 0, 0],
+    //           [2, 0, 3, 3]]
+    // the output should be
+    // matrixElementsSum(matrix) = 9.
+    //
+    // Here's the rooms matrix with unsuitable rooms marked with 'x':
+    //
+    // [[x, 1, 1, 2],
+    //  [x, 5, x, x],
+    //  [x, x, x, x]]
+    // Thus, the answer is 1 + 5 + 1 + 2 = 9.
+    //
+    // Input/Output
+    //
+    // [time limit] 4000ms (js)
+    // [input] array.array.integer matrix
+    //
+    // 2-dimensional array of integers representing a rectangular matrix of the building.
+    //
+    // Guaranteed constraints:
+    // 1 ≤ matrix.length ≤ 5,
+    // 1 ≤ matrix[i].length ≤ 5,
+    // 0 ≤ matrix[i][j] ≤ 10.
+    //
+    // [output] integer
+    //
+
+    var matrix = [[0,1,1,2],
+    [0,5,0,0],
+    [2,0,3,3]];
+
+    function matrixElementsSum(matrix) {
+      for (var i = 0; i < matrix.length-3; i++) {
+        if (matrix[i] == 0)
+        {console.log("plop");
+
+      }
+    }
+  };
+
+  console.log(matrixElementsSum(matrix));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //===============================================================================================================================================================================================================================
+
   //
   // function tripletSum(x, a) {
   // if(a.indeoxOf(a)+a.indeoxOf(a)+a.indeoxOf(a) === x){
@@ -20,7 +299,7 @@ myApp.controller('HomeController', function() {
 
 
 
-//===========================================================================================================================================================================================================================================================================================================================================
+  //===========================================================================================================================================================================================================================================================================================================================================
   // Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.
   //
   // Example
@@ -46,22 +325,22 @@ myApp.controller('HomeController', function() {
   // The minimal number of statues that need to be added to existing statues such that it contains every integer size from an interval [L, R] (for some L, R) and no other sizes.
 
 
-  function makeArrayConsecutive2(statues) {
-    var missing = [];
-  statues.sort((a, b) => (a > b));
-  for (var i = statues[0],a = statues[0]+1; i <= statues[statues.length-1],a <= statues[(statues.length-1)]+1; i++,a++) {
-   console.log("miss",missing,"i",i,"A",a);
- if (statues.indexOf(i)==-1 && a !== i) {
-      missing.push(i);
-    }
-  }
-        return missing.length;
-  }
+  //  function makeArrayConsecutive2(statues) {
+  //    var missing = [];
+  //  statues.sort((a, b) => (a > b));
+  //  for (var i = statues[0],a = statues[0]+1; i <= statues[statues.length-1],a <= statues[(statues.length-1)]+1; i++,a++) {
+  //   console.log("miss",missing,"i",i,"A",a);
+  // if (statues.indexOf(i)==-1 && a !== i) {
+  //      missing.push(i);
+  //    }
+  //  }
+  //        return missing.length;
+  //  }
+  //
+  //
+  //  console.log(makeArrayConsecutive2([0,3]));
 
-
-  console.log(makeArrayConsecutive2([0,3]));
-
-//==========================================================================================================================================================================================================================================================================================================================================
+  //==========================================================================================================================================================================================================================================================================================================================================
 
   // function centuryFromYear(year) {
   //
@@ -76,7 +355,7 @@ myApp.controller('HomeController', function() {
 
 
 
-//==========================================================================================================================================================================================================================================================================================================================================
+  //==========================================================================================================================================================================================================================================================================================================================================
 
 
   // function adjacentElementsProduct(inputArray) {
@@ -96,32 +375,32 @@ myApp.controller('HomeController', function() {
   // return (max*index);
   // }
 
-// ==================================================================================================================================================================================================================================
+  // ==================================================================================================================================================================================================================================
 
 
 
-    // var updateOccurrence = function(hash, value) {
-    //   // probably quicker to cache, but would be inconsistent
-    //   if (hash[value] === undefined) {
-    //     hash[value] = 1;
-    //   } else {
-    //     hash[value]++;
-    //   }
-    //
-    //   return hash[value];
-    // };
-    //
-    // var hash = {};
-    // var greatestOccurrence = 0;
-    // var mode = undefined; // done to be explicit
-    // for (var i = 0; i < inputArray.length; i++) {
-    //   var value = inputArray[i];
-    //   var occurrence = updateOccurrence(hash, value);
-    //   if (greatestOccurrence < occurrence) {
-    //     greatestOccurrence = occurrence;
-    //     mode = value;
-    //   }
-    // }
+  // var updateOccurrence = function(hash, value) {
+  //   // probably quicker to cache, but would be inconsistent
+  //   if (hash[value] === undefined) {
+  //     hash[value] = 1;
+  //   } else {
+  //     hash[value]++;
+  //   }
+  //
+  //   return hash[value];
+  // };
+  //
+  // var hash = {};
+  // var greatestOccurrence = 0;
+  // var mode = undefined; // done to be explicit
+  // for (var i = 0; i < inputArray.length; i++) {
+  //   var value = inputArray[i];
+  //   var occurrence = updateOccurrence(hash, value);
+  //   if (greatestOccurrence < occurrence) {
+  //     greatestOccurrence = occurrence;
+  //     mode = value;
+  //   }
+  // }
 
 
 
