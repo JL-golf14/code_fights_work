@@ -7,6 +7,110 @@ myApp.controller('HomeController', function() {
 
 
 
+//      CCCCCCCCC          OOOOOOOOOO         DDDDDDDDDD              EEEEEEEEEEEEEEEE
+//     CCCCCCCCCCC        OOOOOOOOOOOO        DDDDDDDDDDDD            EEEEEEEEEEEEEEEE
+//    CCCCC    CCCC      OOOOO    OOOOO       DDDD    DDDDD           EEEE
+//    CCCCC    CCCCC    OOOOO      OOOOO      DDDD     DDDDD          EEEE
+//    CCCCC             OOOOO      OOOOO      DDDD     DDDDD          EEEEEEEEEEEEEEE
+//    CCCCC             OOOOO      OOOOO      DDDD    DDDDD           EEEEEEEEEEEEEEE
+//    CCCCC             OOOOO      OOOOO      DDDD    DDDD            EEEE
+//    CCCCC    CCCCCC    OOOOO    OOOOO       DDDD   DDDD             EEEE
+//    CCCCCCCCCCCCCC      OOOOOOOOOOOO        DDDDDDDDDD              EEEEEEEEEEEEEEEE
+//     CCCCCCCCCCCC        OOOOOOOOOO         DDDDDDDDD               EEEEEEEEEEEEEEEE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   function toAndFro(a, b, t) {
+//
+//     var len = Math.abs(b - a);
+//     // t %= (2 * len);
+//     console.log(t, len);
+//     if (t <= len) {
+//       return a + (b - a) / Math.abs(b - a) * t;
+//     }
+//     else {
+// return( a*1.074 + 2*a)
+//     }
+//   }
+//
+//
+// console.log(toAndFro(42,150,548));
+//
+//
+// function toAndFro(a, b, t) {
+//
+//   var len = Math.abs(b - a);
+//   t %= (2 * len);
+//   if (t <= len) {
+//     return a + (b - a) / Math.abs(b - a) * t;
+//   }
+//   else {
+//     t -= len;
+//     return b - (b - a) / Math.abs(a - b) * t;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//   function quickSort(a, l, r) {
+//
+//     if (l >= r) {
+//       // console.log("a");
+//       return a;
+//
+//  console.log("a");
+//  }
+//     var x = a[l];
+//     var i = l;
+//     var j = r;
+//
+//     while (i >= j) {
+//       while (a[i] <= x) {
+//         i++;
+//       }
+//       while (a[j] > x) {
+//         j--;
+//       }
+//       if (i <= j) {
+//         var t = a[i];
+//         a[i] = a[j];
+//         a[j] = t;
+//         i++;
+//         j--;
+//       }
+//     }
+//
+//     // quickSort(a, l, j);
+//     // quickSort(a, i, r);
+//
+//     return a;
+//   }
+// console.log(quickSort([5, 2, 1, 7, 5, 3, 2, 3]));
 
 
   // Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
