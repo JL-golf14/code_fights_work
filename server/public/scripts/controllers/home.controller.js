@@ -36,159 +36,185 @@ myApp.controller('HomeController', function() {
   //
   // Return true if it is possible to remove one element from the array in order to get a strictly increasing sequence, otherwise return false.
 
-//   function almostIncreasingSequence(sequence) {
-//     if(sequence.length == 2) return true;
+
+
+  //   function almostIncreasingSequence(sequence) {
+  //     if(sequence.length == 2) return true;
+  //
+  //     var error = 0;
+  //
+  //     for(var i = 0; i < sequence.length - 1; i++){
+  //       // if current value is greater than next value
+  //       if(sequence[i] >= sequence[i+1]){
+  //         // Test whether stepping back or forwards can bridge the hump or pothole
+  //         var noStepBack = sequence[i-1] && sequence[i-1] >= sequence[i+1];
+  //         var noStepFoward = sequence[i+2] && sequence[i] >= sequence[i+2];
+  //         // We only test for bridge gaps when i > 0
+  //         if(i > 0 && noStepBack && noStepFoward) {
+  //           // Cannot step back over gap forwards or backwards
+  //           // Counts as two errors ONLY WHEN BOTH PRESENT
+  //           error+=2;
+  //         }else{
+  //           // Typical error
+  //           error++;
+  //         }
+  //       }
+  //
+  //       // Early dropout cause if you ever get more than one error, then its game over anyway
+  //       if(error > 1) return false;
+  //     }
+  //
+  //     return true;
+  //     console.log("array11111",almostIncreasingSequence([[1,9,2,9,8]]));
+  //
+  //
+  // }
+
+
+  //===============================================================================================================================================================================================================================
+
+  // After becoming famous, CodeBots decided to move to a new building and live together. The building is represented by a rectangular matrix of rooms, each cell containing an integer - the price of the room. Some rooms are free (their cost is 0), but that's probably because they are haunted, so all the bots are afraid of them. That is why any room that is free or is located anywhere below a free room in the same column is not considered suitable for the bots.
+  //
+  // Help the bots calculate the total price of all the rooms that are suitable for them.
+  //
+  // Example
+  //
+  // For
+  //
+  // matrix = [[0, 1, 1, 2],
+  //           [0, 5, 0, 0],
+  //           [2, 0, 3, 3]]
+  // the output should be
+  // matrixElementsSum(matrix) = 9.
+  //
+  // Here's the rooms matrix with unsuitable rooms marked with 'x':
+  //
+  // [[x, 1, 1, 2],
+  //  [x, 5, x, x],
+  //  [x, x, x, x]]
+  // Thus, the answer is 1 + 5 + 1 + 2 = 9.
+  //
+  // Input/Output
+  //
+  // [time limit] 4000ms (js)
+  // [input] array.array.integer matrix
+  //
+  // 2-dimensional array of integers representing a rectangular matrix of the building.
+  //
+  // Guaranteed constraints:
+  // 1 ≤ matrix.length ≤ 5,
+  // 1 ≤ matrix[i].length ≤ 5,
+  // 0 ≤ matrix[i][j] ≤ 10.
+  //
+  // [output] integer
+  //
+  // function matrixElementsSum(matrix) {
+  //     var result = 0;
+  //     for (var i = 0; i < matrix[0].length; i++) {
+  //         for (var j = 0; j < matrix.length; j++) {
+  //             if (matrix[j][i] === 0) {
+  //                 break;
+  //             }
+  //             result += matrix[j][i];
+  //         }
+  //     }
+  //     return result;
+  // }
+
+
+
+  //===============================================================================================================================================================================================================================
+  // Given an array of strings, return another array containing all of its longest strings.
+  //
+  // Example
+  //
+  // For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+  // allLongestStrings(inputArray) = ["aba", "vcd", "aba"].
+  //
+  // Input/Output
+  //
+  // [time limit] 4000ms (js)
+  // [input] array.string inputArray
+  //
+  // A non-empty array.
+  //
+  // Guaranteed constraints:
+  // 1 ≤ inputArray.length ≤ 10,
+  // 1 ≤ inputArray[i].length ≤ 10.
+  //
+  // [output] array.string
+  //
+  // Array of the longest strings, stored in the same order as in the inputArray.
+  //
+
+  //
+  // function allLongestStrings(inputArray) {
+  //   var longArray = [];
+  //   if (inputArray.length == 1) {
+  //     longArray.push(inputArray[0]);
+  //     return longArray;
+  //   }
+  //   var longest = inputArray.sort(function (a, b) { return b.length - a.length; })[0];
+  //   for (var i = 0; i <= inputArray.length-1; i++) {
+  //     if (inputArray[i].length>=longest.length) {
+  //       longArray.push(inputArray[i]);
+  //     }
+  //   }
+  //   return longArray;
+  // };
+  //
+  // console.log(allLongestStrings(["abc", "eeee", "abcd", "dcd"]));
+  //
+  //
+  //
+
+
+  //===============================================================================================================================================================================================================================
+
+  // Given two strings, find the number of common characters between them.
+  //
+  // Example
+  //
+  // For s1 = "aabcc" and s2 = "adcaa", the output should be
+  // commonCharacterCount(s1, s2) = 3.
+  //
+  // Strings have 3 common characters - 2 "a"s and 1 "c".
+  //
+  // Input/Output
+  //
+  // [time limit] 4000ms (js)
+  // [input] string s1
+  //
+  // A string consisting of lowercase latin letters a-z.
+  //
+  // Guaranteed constraints:
+  // 1 ≤ s1.length ≤ 15.
+  //
+  // [input] string s2
+  //
+  // A string consisting of lowercase latin letters a-z.
+  //
+  // Guaranteed constraints:
+  // 1 ≤ s2.length ≤ 15.
+  //
+  // [output] integer
+
+
+
+
+// function commonCharacterCount(s1, s2) {
+//     var string1=s1.split('');
+//     var string2=s2.split('');
+//     var common=0;
 //
-//     var error = 0;
-//
-//     for(var i = 0; i < sequence.length - 1; i++){
-//       // if current value is greater than next value
-//       if(sequence[i] >= sequence[i+1]){
-//         // Test whether stepping back or forwards can bridge the hump or pothole
-//         var noStepBack = sequence[i-1] && sequence[i-1] >= sequence[i+1];
-//         var noStepFoward = sequence[i+2] && sequence[i] >= sequence[i+2];
-//         // We only test for bridge gaps when i > 0
-//         if(i > 0 && noStepBack && noStepFoward) {
-//           // Cannot step back over gap forwards or backwards
-//           // Counts as two errors ONLY WHEN BOTH PRESENT
-//           error+=2;
-//         }else{
-//           // Typical error
-//           error++;
+//     for(var i=0;i<string1.length;i++){
+//         if(string2.indexOf(string1[i])>=0){
+//             common++;
+//             string2.splice(string2.indexOf(string1[i]),1);
 //         }
-//       }
-//
-//       // Early dropout cause if you ever get more than one error, then its game over anyway
-//       if(error > 1) return false;
 //     }
-//
-//     return true;
-//     console.log("array11111",almostIncreasingSequence([[1,9,2,9,8]]));
-//
-//
+//     return common;
 // }
-
-
-
-
-
-
-
-
-
-
-    //===============================================================================================================================================================================================================================
-
-    // After becoming famous, CodeBots decided to move to a new building and live together. The building is represented by a rectangular matrix of rooms, each cell containing an integer - the price of the room. Some rooms are free (their cost is 0), but that's probably because they are haunted, so all the bots are afraid of them. That is why any room that is free or is located anywhere below a free room in the same column is not considered suitable for the bots.
-    //
-    // Help the bots calculate the total price of all the rooms that are suitable for them.
-    //
-    // Example
-    //
-    // For
-    //
-    // matrix = [[0, 1, 1, 2],
-    //           [0, 5, 0, 0],
-    //           [2, 0, 3, 3]]
-    // the output should be
-    // matrixElementsSum(matrix) = 9.
-    //
-    // Here's the rooms matrix with unsuitable rooms marked with 'x':
-    //
-    // [[x, 1, 1, 2],
-    //  [x, 5, x, x],
-    //  [x, x, x, x]]
-    // Thus, the answer is 1 + 5 + 1 + 2 = 9.
-    //
-    // Input/Output
-    //
-    // [time limit] 4000ms (js)
-    // [input] array.array.integer matrix
-    //
-    // 2-dimensional array of integers representing a rectangular matrix of the building.
-    //
-    // Guaranteed constraints:
-    // 1 ≤ matrix.length ≤ 5,
-    // 1 ≤ matrix[i].length ≤ 5,
-    // 0 ≤ matrix[i][j] ≤ 10.
-    //
-    // [output] integer
-    //
-    // function matrixElementsSum(matrix) {
-    //     var result = 0;
-    //     for (var i = 0; i < matrix[0].length; i++) {
-    //         for (var j = 0; j < matrix.length; j++) {
-    //             if (matrix[j][i] === 0) {
-    //                 break;
-    //             }
-    //             result += matrix[j][i];
-    //         }
-    //     }
-    //     return result;
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //===============================================================================================================================================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //===============================================================================================================================================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   //===============================================================================================================================================================================================================================
